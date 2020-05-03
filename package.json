@@ -1,0 +1,14 @@
+{
+  "name": "risibot",
+  "version": "1.0.0",
+  "description": "Bot Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Une humaine du nom de Clara",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
