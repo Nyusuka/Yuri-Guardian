@@ -9,9 +9,13 @@ bot.on("ready", async message =>{
     bot.user.setActivity("chat perché ! 😹")
 });
 
-//Boucle contenant les évènements :
-bot.on("message", async message =>{
-
+//Boucle contenant la blacklist :
+bot.on("guildMemberAdd", member =>{
+    if(member.id = "376500913465982976"){
+        const reason = "Cette personne a été blacklisté car considéré(e) comme potentiellement nuisible au bien-être du serveur."
+        member.ban(reason);
+        console.log(`${member.username}#${member.discriminator} a été banni avec succès.`)
+    }
 });
 
 //Boucle contenant les commandes :
@@ -32,7 +36,7 @@ bot.on("message", async message => {
     //Commande pour changer le statut du bot. [&aktivität] :
         if(command === "aktivität"){
             const aktivität = args.join(" ");
-            if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
+            if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, mais pour des raisons pratiques, cette commande n'est utilisable que par Nyusuka ou Alyssia.");
             if(!aktivität) return message.reply("AKTIVITÄT ! SCHNELL !");
             bot.user.setActivity(aktivität);
             message.delete().catch(O_o=>{});
