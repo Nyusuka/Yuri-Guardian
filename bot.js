@@ -87,4 +87,39 @@ bot.on("message", async message => {
             .setDescription(`_**${message.author.username}** réconforte **${member.displayName}**._`)
             message.channel.send(cuddle_embed);
         };
+
+//Autres commandes :
+
+    //Commande pour laisser des suggestions pour le bot. [&suggest] :
+        if(message.content.startsWith(prefix + "suggest")){
+            let sayMessage = args.join(" ");
+            message.react('👍')
+            var suggestion = new Discord.RichEmbed()
+                .setAuthor(message.author.username + "#" + message.author.discriminator + " vous propose la suggestion suivante ! :")
+                .setThumbnail(message.author.avatarURL)
+                .setDescription(sayMessage)
+                .setColor('RANDOM')
+                .setTimestamp()
+            bot.fetchUser("382500192907165717", false)
+            .then(user => {user.send(suggestion)
+            });
+            message.reply("Moi et mon créatrice vous remercions de cette proposition. Nous l'examinerons dès que possible !");
+        };
+
+    //Commande pour laisser des suggestions de GIFs. [&gif_suggest] :
+        if(message.content.startsWith(prefix + "gif_suggest")){
+            let sayMessage = args.join(" ");
+            message.react('👍')
+            var suggestion = new Discord.RichEmbed()
+                .setAuthor(message.author.username + "#" + message.author.discriminator + " vient de proposer un nouveau GIF ! :")
+                .setThumbnail(message.author.avatarURL)
+                .setDescription(sayMessage)
+                .setColor('RANDOM')
+                .setTimestamp()
+            bot.fetchUser("382500192907165717", false)
+            .then(user => {user.send(suggestion)
+            });
+            message.reply("Merci bien ! =D");
+        };
+
 });
