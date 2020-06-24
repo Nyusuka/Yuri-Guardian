@@ -48,28 +48,43 @@ bot.on("message", async message => {
     //Hug :
         if(command === "hug") {
 
-        let member = message.mentions.members.first();
-            if(!member)
-            return message.reply("Tu dois mentionner une personne à câliner. =3");
+            let member = message.mentions.members.first();
+                if(!member)
+                return message.reply("Tu dois mentionner une personne à câliner. =3");
 
-        var hug_list = [
-            "https://imgur.com/YdjuHIr.gif",
-            "https://imgur.com/aEdAZYc.gif",
-            "https://imgur.com/ix4pgEJ.gif",
-            "https://imgur.com/mAklRRg.gif",
-            "https://imgur.com/6D4XKIq.gif",
-            "https://imgur.com/j21DTlV.gif",
-            "https://imgur.com/cSg1o6L.gif",
-            "https://imgur.com/MCAueOW.gif"
-        ];
-    
-        var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)] ;
-        var hug_embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setTitle('Câlin !')
-        .setImage(hug_image)
-        .setDescription(`_**${message.author.username}** fait un câlin à **${member.displayName}**._`)
-        message.channel.send(hug_embed);
-    };
+            var hug_list = [
+                "https://imgur.com/6D4XKIq.gif",
+                "https://imgur.com/j21DTlV.gif"
+            ];
 
+            var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)] ;
+            var hug_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Câlin !')
+            .setImage(hug_image)
+            .setDescription(`_**${message.author.username}** fait un câlin à **${member.displayName}**._`)
+            message.channel.send(hug_embed);
+        };
+
+    //Cuddle :
+        if(command === "cuddle") {
+
+            let member = message.mentions.members.first();
+                if(!member)
+                return message.reply("Tu dois mentionner une personne à réconforter. =3");
+
+            var cuddle_list = [
+                "https://imgur.com/YdjuHIr.gif",
+                "https://imgur.com/ix4pgEJ.gif",
+                "https://imgur.com/MCAueOW.gif"
+            ];
+
+            var cuddle_image = cuddle_list[Math.floor(Math.random() * cuddle_list.length)] ;
+            var cuddle_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Cuddle !')
+            .setImage(cuddle_image)
+            .setDescription(`_**${message.author.username}** réconforte **${member.displayName}**._`)
+            message.channel.send(cuddle_embed);
+        };
 });
