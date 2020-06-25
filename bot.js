@@ -9,15 +9,6 @@ bot.on("ready", () =>{
     bot.user.setActivity("chat perché ! 😹")
 });
 
-//Boucle contenant la blacklist :
-bot.on("guildMemberAdd", member =>{
-    if(member.id = "376500913465982976"){ //Petit con de 14 piges.
-        const reason = "Cette personne a été blacklisté car considéré(e) comme potentiellement nuisible au bien-être du serveur."
-        member.ban(reason);
-        console.log(`${member.username}#${member.discriminator} a été banni avec succès.`)
-    }
-});
-
 //Boucle contenant les commandes :
 bot.on("message", async message => {
 
@@ -43,7 +34,7 @@ bot.on("message", async message => {
             console.log(`Le statut du bot à été changé pour "Joue à ${aktivität}" par ${message.author.username}#${message.author.discriminator} (ID : ${message.author.id}).`);
         };
 
-//Commandes de role-play :
+//Commandes de roleplay :
 
     //Hug :
         if(command === "hug") {
@@ -90,7 +81,17 @@ bot.on("message", async message => {
 
 //Autres commandes :
 
-    //Commande pour laisser des suggestions pour le bot. [&suggest] :
+    //Commande pour afficher la liste des commandes disponibles du bot. [&help] :
+        if(message.content.startsWith(prefix + "help")){
+            var help = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('Liste des commandes disponibles :')    
+                .setDescription("**__Commandes de roleplay :__**\n● `%hug`\n● `%cuddle`\n● `%kiss`\n● `%pat`\n● `%poke`\n● `%smile`\n● `%handholding`\n \n**__Autres commandes :__**`\n● `%gif_suggest` _(Permet de suggérer de nouveaux GIFs pour les commadnes de roleplay.)_\n● `%bug_report` _(Permet de signaler un bug dans le but de le corriger.)_")
+                .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
+            message.channel.send(help);
+        }; //hug kiss cuddle pat poke smile handholding
+
+    //Commande pour laisser des suggestions pour le bot. [%suggest] :
         if(message.content.startsWith(prefix + "suggest")){
             let sayMessage = args.join(" ");
             message.react('👍')
@@ -106,7 +107,7 @@ bot.on("message", async message => {
             message.reply("Moi et mon créatrice vous remercions de cette proposition. Nous l'examinerons dès que possible !");
         };
 
-    //Commande pour laisser des suggestions de GIFs. [&gif_suggest] :
+    //Commande pour laisser des suggestions de GIFs. [%gif_suggest] :
         if(message.content.startsWith(prefix + "gif_suggest")){
             let sayMessage = args.join(" ");
             message.react('👍')
@@ -122,4 +123,18 @@ bot.on("message", async message => {
             message.reply("Merci bien ! =D");
         };
 
+    //Commande pour signaler un bug. [%bug_report] :
+        if(command === "bug_report"){
+            if(message.content.startsWith(prefix + "say")){
+                if(!message.channel.guild) return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
+                const sayMessage = args.join(" ");
+                message.delete().catch(O_o=>{});
+                message.channel.send(`<@${ownerID}, le bug suivant vient d'être signalé dans ce salon par <@${message.author.id}>. : "` + sayMessage + `"`);
+            };
+        }
+    
+    //Commande de ping. [&ping] :
+        if(message.content.startsWith(prefix + "ping")){
+            message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
+        };
 });
