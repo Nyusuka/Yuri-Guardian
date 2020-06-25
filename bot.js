@@ -36,18 +36,26 @@ bot.on("message", async message => {
 
 //Commandes de roleplay :
 
-    //Hug :
-        if(command === "hug") {
+    /*
+    hug <user>
+    kiss (bisou-joue) <user>
+    cuddle <user>
+    pat <user>
+    poke (tripotage de joue) <user>
+    handholding <user>
+    smile [user]
+    blush [user]
+    */
 
+    //Hug :
+        if(command === "hug"){
             let member = message.mentions.members.first();
                 if(!member)
                 return message.reply("Tu dois mentionner une personne à câliner. =3");
-
             var hug_list = [
                 "https://imgur.com/6D4XKIq.gif",
                 "https://imgur.com/j21DTlV.gif"
             ];
-
             var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)] ;
             var hug_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
@@ -58,18 +66,15 @@ bot.on("message", async message => {
         };
 
     //Cuddle :
-        if(command === "cuddle") {
-
+        if(command === "cuddle"){
             let member = message.mentions.members.first();
                 if(!member)
                 return message.reply("Tu dois mentionner une personne à réconforter. =3");
-
             var cuddle_list = [
                 "https://imgur.com/YdjuHIr.gif",
                 "https://imgur.com/ix4pgEJ.gif",
                 "https://imgur.com/MCAueOW.gif"
             ];
-
             var cuddle_image = cuddle_list[Math.floor(Math.random() * cuddle_list.length)] ;
             var cuddle_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
@@ -79,6 +84,9 @@ bot.on("message", async message => {
             message.channel.send(cuddle_embed);
         };
 
+    //Kiss (bisou-joue) :
+        //if(command === "kiss"){}
+
 //Autres commandes :
 
     //Commande pour afficher la liste des commandes disponibles du bot. [&help] :
@@ -86,7 +94,7 @@ bot.on("message", async message => {
             var help = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setTitle('Liste des commandes disponibles :')    
-                .setDescription("**__Commandes de roleplay :__**\n● `%hug`\n● `%cuddle`\n● `%kiss`\n● `%pat`\n● `%poke`\n● `%smile`\n● `%handholding`\n \n**__Autres commandes :__**`\n● `%gif_suggest` _(Permet de suggérer de nouveaux GIFs pour les commadnes de roleplay.)_\n● `%bug_report` _(Permet de signaler un bug dans le but de le corriger.)_")
+                .setDescription("**__Commandes de roleplay :__**\n● `%hug`\n● `%cuddle`\n● `%kiss`\n● `%pat`\n● `%poke`\n● `%smile`\n● `%handholding`\n \n**__Autres commandes :__**\n● `%gif_suggest` _(Permet de suggérer de nouveaux GIFs pour les commadnes de roleplay.)_\n● `%bug_report` _(Permet de signaler un bug dans le but de le corriger.)_")
                 .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
             message.channel.send(help);
         }; //hug kiss cuddle pat poke smile handholding
