@@ -37,9 +37,9 @@ bot.on("message", async message => {
 //Commandes de roleplay :
 
     /*
-    hug <user>
-    kiss (bisou-joue) <user>
-    cuddle <user>
+    #hug <user>
+    #kiss (bisou-joue) <user>
+    #cuddle <user>
     pat <user>
     poke (tripotage de joue) <user>
     handholding <user>
@@ -56,7 +56,7 @@ bot.on("message", async message => {
                 "https://imgur.com/6D4XKIq.gif",
                 "https://imgur.com/j21DTlV.gif"
             ];
-            var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)] ;
+            var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)];
             var hug_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Câlin !')
@@ -75,7 +75,7 @@ bot.on("message", async message => {
                 "https://imgur.com/ix4pgEJ.gif",
                 "https://imgur.com/MCAueOW.gif"
             ];
-            var cuddle_image = cuddle_list[Math.floor(Math.random() * cuddle_list.length)] ;
+            var cuddle_image = cuddle_list[Math.floor(Math.random() * cuddle_list.length)];
             var cuddle_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Cuddle !')
@@ -85,7 +85,69 @@ bot.on("message", async message => {
         };
 
     //Kiss (bisou-joue) :
-        //if(command === "kiss"){}
+        if(command === "kiss"){
+            let member = message.mentions.members.first();
+                if(!member)
+                return message.reply("Tu dois mentionner une personne à bisouter. =3");
+            var kiss_list = [
+                "..."
+            ];
+            var kiss_image = kiss_list[Math.floor(Math.random() * kiss_list.length)];
+            var kiss_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Bisou-joue !')
+            .setImage(kiss_image)
+            .setDescription(`_**${message.author.username}** fait un bisou sur la joue de **${member.displayName}**._`)
+            message.channel.send(kiss_embed);
+        };
+
+    //Blush (rougir) :
+    if(command === "blush"){
+        var blush_list = [
+            "https://media.tenor.com/images/b1626b3f9b94d3494c8a05d5cad15332/tenor.gif"
+        ];
+        var blush_image = blush_list[Math.floor(Math.random() * blush_list.length)];
+        let member = message.mentions.members.first();
+            if(!member){
+                var blush_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('😳')
+                .setImage(blush_image)
+                .setDescription(`_**${message.author.username}** rougit._`)
+                message.channel.send(blush_embed);
+            };            
+        var blush_embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setTitle('😳')
+        .setImage(blush_image)
+        .setDescription(`_**${message.author.username}** rougit face à **${member.displayName}**._`)
+        message.channel.send(blush_embed);
+    };
+
+    //Blush (rougir) :
+        if(command === "blush"){
+            var blush_list = [
+                "https://media.tenor.com/images/b1626b3f9b94d3494c8a05d5cad15332/tenor.gif"
+            ];
+            var blush_image = blush_list[Math.floor(Math.random() * blush_list.length)];
+            let member = message.mentions.members.first();
+            if(!member){
+                var blush_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('😳')
+                .setImage(blush_image)
+                .setDescription(`_**${message.author.username}** rougit._`)
+                message.channel.send(blush_embed);
+            }
+            else{         
+                var blush_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('😳')
+                .setImage(blush_image)
+                .setDescription(`_**${message.author.username}** rougit face à **${member.displayName}**._`)
+                message.channel.send(blush_embed)
+            }
+        };
 
 //Autres commandes :
 
