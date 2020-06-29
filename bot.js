@@ -22,29 +22,17 @@ bot.on("message", async message => {
         const args = message.content.slice(prefix.length).trim().split(/ +/g); 
         const command = args.shift().toLowerCase();
 
-//Commandes réservées à Nyusuka et aux contributeurs du développement du bot :
-
-    //Commande pour changer le statut du bot. [&aktivität] :
-        if(command === "aktivität"){
-            const aktivität = args.join(" ");
-            if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, mais pour des raisons pratiques, cette commande n'est utilisable que par Nyusuka ou Alyssia.");
-            if(!aktivität) return message.reply("AKTIVITÄT ! SCHNELL !");
-            bot.user.setActivity(aktivität);
-            message.delete().catch(O_o=>{});
-            console.log(`Le statut du bot à été changé pour "Joue à ${aktivität}" par ${message.author.username}#${message.author.discriminator} (ID : ${message.author.id}).`);
-        };
-
 //Commandes de roleplay :
 
     /*
     #hug <user>
     #kiss (bisou-joue) <user>
     #cuddle <user>
-    pat <user>
-    poke (tripotage de joue) <user>
-    handholding <user>
-    smile [user]
-    blush [user]
+    #pat <user>
+    #poke (tripotage de joue) <user>
+    #handholding <user>
+    #smile [user]
+    #blush [user]
     */
 
     //Hug :
@@ -54,7 +42,11 @@ bot.on("message", async message => {
                 return message.reply("Tu dois mentionner une personne à câliner. =3");
             var hug_list = [
                 "https://imgur.com/6D4XKIq.gif",
-                "https://imgur.com/j21DTlV.gif"
+                "https://imgur.com/j21DTlV.gif",
+                "https://cdn.discordapp.com/attachments/706170967960977409/726571096416976926/08e4fe14-485f-4f2b-9014-892d1d672b94.gif",
+                "https://media.tenor.com/images/dedb92412ec281c9a89b79492fa71831/tenor.gif",
+                "https://media.tenor.com/images/daed52a4ee85e276e1099ac77d1539c3/tenor.gif",
+                "https://cdn.discordapp.com/attachments/706170967960977409/726570789050122340/tenor-1.gif"
             ];
             var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)];
             var hug_embed = new Discord.RichEmbed()
@@ -73,7 +65,9 @@ bot.on("message", async message => {
             var cuddle_list = [
                 "https://imgur.com/YdjuHIr.gif",
                 "https://imgur.com/ix4pgEJ.gif",
-                "https://imgur.com/MCAueOW.gif"
+                "https://imgur.com/MCAueOW.gif",
+                "https://media.tenor.com/images/7a6c91842f8b2871ecf5234bcd095da7/tenor.gif",
+                "https://media.tenor.com/images/8d33eeee359d0453de52c5779dd23c46/tenor.gif"
             ];
             var cuddle_image = cuddle_list[Math.floor(Math.random() * cuddle_list.length)];
             var cuddle_embed = new Discord.RichEmbed()
@@ -90,7 +84,7 @@ bot.on("message", async message => {
                 if(!member)
                 return message.reply("Tu dois mentionner une personne à bisouter. =3");
             var kiss_list = [
-                "..."
+                "https://cdn.discordapp.com/attachments/706170967960977409/726570393925582988/9ba325b3eee2c69f0b3ffd00696230a0.gif"
             ];
             var kiss_image = kiss_list[Math.floor(Math.random() * kiss_list.length)];
             var kiss_embed = new Discord.RichEmbed()
@@ -149,6 +143,82 @@ bot.on("message", async message => {
             }
         };
 
+    //Poke :
+        if(command === "poke"){
+            let member = message.mentions.members.first();
+                if(!member)
+                return message.reply("Tu dois mentionner une personne à tripoter. =3");
+            var poke_list = [
+                "..."
+            ];
+            var poke_image = poke_list[Math.floor(Math.random() * poke_list.length)];
+            var poke_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Tripotage de joue !')
+            .setImage(poke_image)
+            .setDescription(`_**${message.author.username}** tripote la joue de **${member.displayName}**._`)
+            message.channel.send(poke_embed);
+        };
+
+    //Pat
+        if(command === "pat"){
+            let member = message.mentions.members.first();
+                if(!member)
+                return message.reply("Tu dois mentionner une personne à pat pat. =3");
+            var pat_list = [
+                "..."
+            ];
+            var pat_image = pat_list[Math.floor(Math.random() * pat_list.length)];
+            var pat_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Pat pat !')
+            .setImage(pat_image)
+            .setDescription(`_**${message.author.username}** fait pat pat à **${member.displayName}**._`)
+            message.channel.send(pat_embed);
+        };
+
+    //Blush (rougir) :
+        if(command === "smile"){
+            var smile_list = [
+                "..."
+            ];
+            var smile_image = smile_list[Math.floor(Math.random() * smile_list.length)];
+            let member = message.mentions.members.first();
+            if(!member){
+                var smile_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('😸')
+                .setImage(smile_image)
+                .setDescription(`_**${message.author.username}** sourit._`)
+                message.channel.send(blush_embed);
+            }
+            else{         
+                var blush_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('😸')
+                .setImage(smile_image)
+                .setDescription(`_**${message.author.username}** sourit à **${member.displayName}**._`)
+                message.channel.send(smile_embed)
+            }
+        };
+
+    //Handholding :
+        if(command === "handholding"){
+            let member = message.mentions.members.first();
+                if(!member)
+                return message.reply("Tu dois mentionner une personne à qui tenir la main. =3");
+            var handholding_list = [
+                "..."
+            ];
+            var handholding_image = handholding_list[Math.floor(Math.random() * handholding_list.length)];
+            var handholding_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle('Tripotage de joue !')
+            .setImage(handholding_image)
+            .setDescription(`_**${message.author.username}** tient la main de **${member.displayName}**._`)
+            message.channel.send(handholding_embed);
+        };
+
 //Autres commandes :
 
     //Commande pour afficher la liste des commandes disponibles du bot. [&help] :
@@ -157,7 +227,7 @@ bot.on("message", async message => {
                 .setColor('RANDOM')
                 .setTitle('Liste des commandes disponibles :')    
                 .setDescription("**__Commandes de roleplay :__**\n● `%hug`\n● `%cuddle`\n● `%kiss`\n● `%pat`\n● `%poke`\n● `%smile`\n● `%handholding`\n \n**__Autres commandes :__**\n● `%gif_suggest` _(Permet de suggérer de nouveaux GIFs pour les commadnes de roleplay.)_\n● `%bug_report` _(Permet de signaler un bug dans le but de le corriger.)_")
-                .setFooter("Cette liste n'est pas complète pour le moment. Elle s'agrandira a fur et à mesure du développement du bot.")
+                .setFooter("Certaines commandes possèdent encore assez peu de GIFs. D'autres ne fonctionneront pas car elles n'ont pas de GIF. Alors pensez à en proposer régulièrement pour qu'ils puissent être ajoutés le plus vite possible.")
             message.channel.send(help);
         }; //hug kiss cuddle pat poke smile handholding
 
@@ -199,12 +269,22 @@ bot.on("message", async message => {
                 if(!message.channel.guild) return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
                 const sayMessage = args.join(" ");
                 message.delete().catch(O_o=>{});
-                message.channel.send(`<@${ownerID}, le bug suivant vient d'être signalé dans ce salon par <@${message.author.id}>. : "` + sayMessage + `"`);
+                message.channel.send(`<@${ownerID}, le bug suivant vient d'être signalé dans ce salon par <@${message.author.id}>. : "${sayMessage}"`);
             };
         }
     
     //Commande de ping. [&ping] :
         if(message.content.startsWith(prefix + "ping")){
             message.channel.send(`Ping de \` ${new Date().getTime() - message.createdTimestamp} \` ms. \nLatence de l'API de \` ${Math.round(bot.ping)} \` ms.`);
+        };
+
+    //Commande pour changer le statut du bot. [%aktivität] :
+        if(command === "aktivität"){
+            const aktivität = args.join(" ");
+            if(message.author.id !== ownerID && message.author.id !== contributorID_01) return message.channel.send("Désolée, mais cette commande n'est utilisable qu'à des fins expérimentales par les personnes qui contribuent à mon développement. Si vous souhaitez l'utiliser et apporter votre maigre soutien, veuillez ~~aller vous faire foutre~~ postuler via la commande `&suggest` ou vous adresser directement à ma créatrice.");
+            if(!aktivität) return message.reply("AKTIVITÄT ! SCHNELL !");
+            bot.user.setActivity(aktivität);
+            message.delete().catch(O_o=>{});
+            console.log(`Le statut du bot à été changé pour "Joue à ${aktivität}" par ${message.author.username}#${message.author.discriminator} (ID : ${message.author.id}).`);
         };
 });
