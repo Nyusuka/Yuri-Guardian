@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
 bot.login(token);
+//Note à moi-même : penser à ajouter des commandes "nya" et "nose bleed" à mon bot.
 
 //Boucle pour le statut du bot au démarrage :
 bot.on("ready", () =>{
@@ -49,7 +50,9 @@ bot.on("message", async message => {
                 "https://cdn.discordapp.com/attachments/706170967960977409/726570789050122340/tenor-1.gif",
                 "https://images-ext-2.discordapp.net/external/RZTr3T4mdgJtcY3q1LIplds03o9b123e2V7SQP_CLxk/https/cdn.weeb.sh/images/B1SzeshCW.gif?width=400&height=225",
                 "https://images-ext-1.discordapp.net/external/OCi3hLOGIydsGnduaL_DrKrldFZP0RdFrkC8aa91R7A/https/cdn.weeb.sh/images/B1Qb88XvW.gif",
-                "https://images-ext-1.discordapp.net/external/xUyeHjViQkLTS-QPI894Pgi3sMvA70O54QSBr-LX8P0/https/cdn.weeb.sh/images/Hyv6uOQPZ.gif?width=400&height=208"
+                "https://images-ext-1.discordapp.net/external/ald1WHnALpYd-BV4lAZ1WYJ5bV938TPuERkyqse2Fig/https/cdn.weeb.sh/images/SJfEks3Rb.gif?width=400&height=225",
+                "https://images-ext-1.discordapp.net/external/xUyeHjViQkLTS-QPI894Pgi3sMvA70O54QSBr-LX8P0/https/cdn.weeb.sh/images/Hyv6uOQPZ.gif?width=400&height=208",
+                "https://images-ext-1.discordapp.net/external/ED29Pd7JzKFcWtjEd_I9NUoms47X7asheMx4blzO5kY/https/cdn.weeb.sh/images/H1X6OOmPW.gif"
             ];
             var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)];
             var hug_embed = new Discord.RichEmbed()
@@ -90,7 +93,8 @@ bot.on("message", async message => {
                 if(!member)
                 return message.reply("Tu dois mentionner une personne à bisouter. =3");
             var kiss_list = [
-                "https://cdn.discordapp.com/attachments/706170967960977409/726570393925582988/9ba325b3eee2c69f0b3ffd00696230a0.gif"
+                "https://cdn.discordapp.com/attachments/706170967960977409/726570393925582988/9ba325b3eee2c69f0b3ffd00696230a0.gif",
+                "https://tenor.com/view/yuri-kiss-anime-blushed-gif-17050283"
             ];
             var kiss_image = kiss_list[Math.floor(Math.random() * kiss_list.length)];
             var kiss_embed = new Discord.RichEmbed()
@@ -107,7 +111,8 @@ bot.on("message", async message => {
                 "https://media.tenor.com/images/b1626b3f9b94d3494c8a05d5cad15332/tenor.gif",
                 "https://images-ext-2.discordapp.net/external/sDMoN120Tl0gsGgg4gLBAcFWtsIRMlkhKLfNHOmlsbw/https/cdn.weeb.sh/images/B1J4GIQP-.gif",
                 "https://media.tenor.com/images/818a1df69200edd887d3bfc99969d65c/tenor.gif",
-                "https://tenor.com/view/surprised-anime-anime-huh-wait-what-catalina-claes-gif-17082491"
+                "https://tenor.com/view/surprised-anime-anime-huh-wait-what-catalina-claes-gif-17082491",
+                "https://thumbs.gfycat.com/WickedMelodicAfricangroundhornbill-small.gif"
             ];
             var blush_image = blush_list[Math.floor(Math.random() * blush_list.length)];
             let member = message.mentions.members.first();
@@ -150,7 +155,7 @@ bot.on("message", async message => {
                 if(!member)
                 return message.reply("Tu dois mentionner une personne à pat pat. =3");
             var pat_list = [
-                "..."
+                "https://tenor.com/view/anime-fox-cute-pat-head-gif-14083552"
             ];
             var pat_image = pat_list[Math.floor(Math.random() * pat_list.length)];
             var pat_embed = new Discord.RichEmbed()
@@ -165,7 +170,8 @@ bot.on("message", async message => {
         if(command === "smile"){
             var smile_list = [
                 "https://tenor.com/view/charlotte-anime-gif-5919725",
-                "https://media.tenor.com/images/8f711b12e00bc1816694bf51909f8b8f/tenor.gif"
+                "https://media.tenor.com/images/8f711b12e00bc1816694bf51909f8b8f/tenor.gif",
+                "https://tenor.com/view/anime-creature-happy-smiling-fox-gif-16683079"
             ];
             var smile_image = smile_list[Math.floor(Math.random() * smile_list.length)];
             let member = message.mentions.members.first();
