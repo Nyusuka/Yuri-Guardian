@@ -48,7 +48,8 @@ bot.on("message", async message => {
                 "https://media.tenor.com/images/daed52a4ee85e276e1099ac77d1539c3/tenor.gif",
                 "https://cdn.discordapp.com/attachments/706170967960977409/726570789050122340/tenor-1.gif",
                 "https://images-ext-2.discordapp.net/external/RZTr3T4mdgJtcY3q1LIplds03o9b123e2V7SQP_CLxk/https/cdn.weeb.sh/images/B1SzeshCW.gif?width=400&height=225",
-                "https://images-ext-1.discordapp.net/external/OCi3hLOGIydsGnduaL_DrKrldFZP0RdFrkC8aa91R7A/https/cdn.weeb.sh/images/B1Qb88XvW.gif"
+                "https://images-ext-1.discordapp.net/external/OCi3hLOGIydsGnduaL_DrKrldFZP0RdFrkC8aa91R7A/https/cdn.weeb.sh/images/B1Qb88XvW.gif",
+                "https://images-ext-1.discordapp.net/external/xUyeHjViQkLTS-QPI894Pgi3sMvA70O54QSBr-LX8P0/https/cdn.weeb.sh/images/Hyv6uOQPZ.gif?width=400&height=208"
             ];
             var hug_image = hug_list[Math.floor(Math.random() * hug_list.length)];
             var hug_embed = new Discord.RichEmbed()
@@ -105,7 +106,8 @@ bot.on("message", async message => {
             var blush_list = [
                 "https://media.tenor.com/images/b1626b3f9b94d3494c8a05d5cad15332/tenor.gif",
                 "https://images-ext-2.discordapp.net/external/sDMoN120Tl0gsGgg4gLBAcFWtsIRMlkhKLfNHOmlsbw/https/cdn.weeb.sh/images/B1J4GIQP-.gif",
-                "https://media.tenor.com/images/818a1df69200edd887d3bfc99969d65c/tenor.gif"
+                "https://media.tenor.com/images/818a1df69200edd887d3bfc99969d65c/tenor.gif",
+                "https://tenor.com/view/surprised-anime-anime-huh-wait-what-catalina-claes-gif-17082491"
             ];
             var blush_image = blush_list[Math.floor(Math.random() * blush_list.length)];
             let member = message.mentions.members.first();
@@ -123,31 +125,6 @@ bot.on("message", async message => {
             .setImage(blush_image)
             .setDescription(`_**${message.author.username}** rougit face à **${member.displayName}**._`)
             message.channel.send(blush_embed);
-        };
-
-    //Blush (rougir) :
-        if(command === "blush"){
-            var blush_list = [
-                "https://media.tenor.com/images/b1626b3f9b94d3494c8a05d5cad15332/tenor.gif"
-            ];
-            var blush_image = blush_list[Math.floor(Math.random() * blush_list.length)];
-            let member = message.mentions.members.first();
-            if(!member){
-                var blush_embed = new Discord.RichEmbed()
-                .setColor('RANDOM')
-                .setTitle('😳')
-                .setImage(blush_image)
-                .setDescription(`_**${message.author.username}** rougit._`)
-                message.channel.send(blush_embed);
-            }
-            else{         
-                var blush_embed = new Discord.RichEmbed()
-                .setColor('RANDOM')
-                .setTitle('😳')
-                .setImage(blush_image)
-                .setDescription(`_**${message.author.username}** rougit face à **${member.displayName}**._`)
-                message.channel.send(blush_embed)
-            }
         };
 
     //Poke :
@@ -184,7 +161,7 @@ bot.on("message", async message => {
             message.channel.send(pat_embed);
         };
 
-    //Blush (rougir) :
+    //Smile :
         if(command === "smile"){
             var smile_list = [
                 "https://tenor.com/view/charlotte-anime-gif-5919725",
@@ -201,7 +178,7 @@ bot.on("message", async message => {
                 message.channel.send(blush_embed);
             }
             else{         
-                var blush_embed = new Discord.RichEmbed()
+                var smile_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setTitle('😸')
                 .setImage(smile_image)
