@@ -199,7 +199,8 @@ bot.on("message", async message => {
                 if(!member)
                 return message.reply("Tu dois mentionner une personne à qui tenir la main. =3");
             var handholding_list = [
-                "..."
+                "https://images.app.goo.gl/z1SMC4Ukxs85wta9A",
+                "https://images.app.goo.gl/DQMiVj25qN3wPyGJ9"
             ];
             var handholding_image = handholding_list[Math.floor(Math.random() * handholding_list.length)];
             var handholding_embed = new Discord.RichEmbed()
@@ -259,6 +260,7 @@ bot.on("message", async message => {
             if(message.content.startsWith(prefix + "say")){
                 if(!message.channel.guild) return message.channel.send("Désolé, mais cette commande n'est pas disponible en messages privés.");
                 const sayMessage = args.join(" ");
+                if(!sayMessage) return message.reply("Tu as oublié de mettre un GIF; =(");
                 message.delete().catch(O_o=>{});
                 message.channel.send(`<@${ownerID}, le bug suivant vient d'être signalé dans ce salon par <@${message.author.id}>. : "${sayMessage}"`);
             };
