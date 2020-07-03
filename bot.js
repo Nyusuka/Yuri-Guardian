@@ -39,8 +39,7 @@ bot.on("message", async message => {
     //Hug :
         if(command === "hug"){
             let member = message.mentions.members.first();
-                if(!member)
-                return message.reply("Tu dois mentionner une personne à câliner. =3");
+                if(!member) return message.reply("Tu dois mentionner une personne à câliner. =3");
             var hug_list = [
                 "https://imgur.com/6D4XKIq.gif",
                 "https://imgur.com/j21DTlV.gif",
@@ -58,6 +57,7 @@ bot.on("message", async message => {
             var hug_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Câlin !')
+            .setURL(hug_image)
             .setImage(hug_image)
             .setDescription(`_**${message.author.username}** fait un câlin à **${member.displayName}**._`)
             message.channel.send(hug_embed);
@@ -66,8 +66,7 @@ bot.on("message", async message => {
     //Cuddle :
         if(command === "cuddle"){
             let member = message.mentions.members.first();
-                if(!member)
-                return message.reply("Tu dois mentionner une personne à réconforter. =3");
+                if(!member) return message.reply("Tu dois mentionner une personne à réconforter. =3");
             var cuddle_list = [
                 "https://imgur.com/YdjuHIr.gif",
                 "https://imgur.com/ix4pgEJ.gif",
@@ -82,6 +81,7 @@ bot.on("message", async message => {
             var cuddle_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Cuddle !')
+            .setURL(cuddle_image)
             .setImage(cuddle_image)
             .setDescription(`_**${message.author.username}** réconforte **${member.displayName}**._`)
             message.channel.send(cuddle_embed);
@@ -90,8 +90,7 @@ bot.on("message", async message => {
     //Kiss (bisou-joue) :
         if(command === "kiss"){
             let member = message.mentions.members.first();
-                if(!member)
-                return message.reply("Tu dois mentionner une personne à bisouter. =3");
+                if(!member) return message.reply("Tu dois mentionner une personne à bisouter. =3");
             var kiss_list = [
                 "https://cdn.discordapp.com/attachments/706170967960977409/726570393925582988/9ba325b3eee2c69f0b3ffd00696230a0.gif",
                 "https://tenor.com/view/yuri-kiss-anime-blushed-gif-17050283"
@@ -119,14 +118,16 @@ bot.on("message", async message => {
                 if(!member){
                     var blush_embed = new Discord.RichEmbed()
                     .setColor('RANDOM')
-                    .setTitle('😳')
+                    .setTitle('(≧▽≦)')
+                    .setURL(blush_image)
                     .setImage(blush_image)
                     .setDescription(`_**${message.author.username}** rougit._`)
                     message.channel.send(blush_embed);
                 };            
             var blush_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .setTitle('😳')
+            .setTitle('(≧▽≦)')
+            .setURL(blush_image)
             .setImage(blush_image)
             .setDescription(`_**${message.author.username}** rougit face à **${member.displayName}**._`)
             message.channel.send(blush_embed);
@@ -135,8 +136,7 @@ bot.on("message", async message => {
     //Poke :
         if(command === "poke"){
             let member = message.mentions.members.first();
-                if(!member)
-                return message.reply("Tu dois mentionner une personne à tripoter. =3");
+                if(!member) return message.reply("Tu dois mentionner une personne à tripoter. =3");
             var poke_list = [
                 "..."
             ];
@@ -144,6 +144,7 @@ bot.on("message", async message => {
             var poke_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Tripotage de joue !')
+            .setURL(poke_image)
             .setImage(poke_image)
             .setDescription(`_**${message.author.username}** tripote la joue de **${member.displayName}**._`)
             message.channel.send(poke_embed);
@@ -152,8 +153,7 @@ bot.on("message", async message => {
     //Pat
         if(command === "pat"){
             let member = message.mentions.members.first();
-                if(!member)
-                return message.reply("Tu dois mentionner une personne à pat pat. =3");
+                if(!member) return message.reply("Tu dois mentionner une personne à pat pat. =3");
             var pat_list = [
                 "https://tenor.com/view/anime-fox-cute-pat-head-gif-14083552"
             ];
@@ -161,6 +161,7 @@ bot.on("message", async message => {
             var pat_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Pat pat !')
+            .setURL(pat_image)
             .setImage(pat_image)
             .setDescription(`_**${message.author.username}** fait pat pat à **${member.displayName}**._`)
             message.channel.send(pat_embed);
@@ -178,7 +179,8 @@ bot.on("message", async message => {
             if(!member){
                 var smile_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-                .setTitle('😸')
+                .setTitle('(✿^‿^)')
+                .setURL(smile_image)
                 .setImage(smile_image)
                 .setDescription(`_**${message.author.username}** sourit._`)
                 message.channel.send(blush_embed);
@@ -186,7 +188,8 @@ bot.on("message", async message => {
             else{         
                 var smile_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-                .setTitle('😸')
+                .setTitle('(✿^‿^)')
+                .setURL(smile_image)
                 .setImage(smile_image)
                 .setDescription(`_**${message.author.username}** sourit à **${member.displayName}**._`)
                 message.channel.send(smile_embed)
@@ -196,8 +199,7 @@ bot.on("message", async message => {
     //Handholding :
         if(command === "handholding"){
             let member = message.mentions.members.first();
-                if(!member)
-                return message.reply("Tu dois mentionner une personne à qui tenir la main. =3");
+                if(!member) return message.reply("Tu dois mentionner une personne à qui tenir la main. =3");
             var handholding_list = [
                 "https://images.app.goo.gl/z1SMC4Ukxs85wta9A",
                 "https://images.app.goo.gl/DQMiVj25qN3wPyGJ9"
@@ -205,11 +207,41 @@ bot.on("message", async message => {
             var handholding_image = handholding_list[Math.floor(Math.random() * handholding_list.length)];
             var handholding_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
-            .setTitle('Tripotage de joue !')
+            .setTitle('Ship !')
+            .setURL(handholding_image)
             .setImage(handholding_image)
             .setDescription(`_**${message.author.username}** tient la main de **${member.displayName}**._`)
             message.channel.send(handholding_embed);
         };
+
+ /*   //Nose_bleed :
+        if(command === "smile"){
+            var smile_list = [
+                "https://tenor.com/view/charlotte-anime-gif-5919725",
+                "https://media.tenor.com/images/8f711b12e00bc1816694bf51909f8b8f/tenor.gif",
+                "https://tenor.com/view/anime-creature-happy-smiling-fox-gif-16683079"
+                ];
+            var smile_image = smile_list[Math.floor(Math.random() * smile_list.length)];
+            let member = message.mentions.members.first();
+            if(!member){
+                var smile_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('(✿^‿^)')
+                .setURL(smile_image)
+                .setImage(smile_image)
+                .setDescription(`_**${message.author.username}** sourit._`)
+                message.channel.send(blush_embed);
+            }
+            else{         
+                var smile_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('(✿^‿^)')
+                .setURL(smile_image)
+                .setImage(smile_image)
+                .setDescription(`_**${message.author.username}** sourit à **${member.displayName}**._`)
+                message.channel.send(smile_embed)
+            }
+        };*/
 
 //Autres commandes :
 
@@ -236,7 +268,7 @@ bot.on("message", async message => {
             bot.fetchUser("382500192907165717", false)
             .then(user => {user.send(suggestion)
             });
-            message.reply("Moi et mon créatrice vous remercions de cette proposition. Nous l'examinerons dès que possible !");
+            message.reply("Moi et ma créatrice vous remercions de cette proposition. Nous l'examinerons dès que possible !");
         };
 
     //Commande pour laisser des suggestions de GIFs. [%gif_suggest] :
