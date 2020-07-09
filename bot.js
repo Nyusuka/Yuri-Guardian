@@ -183,7 +183,7 @@ bot.on("message", async message => {
                 .setURL(smile_image)
                 .setImage(smile_image)
                 .setDescription(`_**${message.author.username}** sourit._`)
-                message.channel.send(blush_embed);
+                message.channel.send(smile_embed);
             }
             else{         
                 var smile_embed = new Discord.RichEmbed()
@@ -214,34 +214,32 @@ bot.on("message", async message => {
             message.channel.send(handholding_embed);
         };
 
- /*   //Nose_bleed :
-        if(command === "smile"){
-            var smile_list = [
-                "https://tenor.com/view/charlotte-anime-gif-5919725",
-                "https://media.tenor.com/images/8f711b12e00bc1816694bf51909f8b8f/tenor.gif",
-                "https://tenor.com/view/anime-creature-happy-smiling-fox-gif-16683079"
+    //Nose_bleed :
+        if(command === "nosebleed"){
+            var nosebleed_list = [
+                ""
                 ];
-            var smile_image = smile_list[Math.floor(Math.random() * smile_list.length)];
+            var nosebleed_image = nosebleed_list[Math.floor(Math.random() * nosebleed_list.length)];
             let member = message.mentions.members.first();
             if(!member){
-                var smile_embed = new Discord.RichEmbed()
+                var nosebleed_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-                .setTitle('(✿^‿^)')
-                .setURL(smile_image)
-                .setImage(smile_image)
-                .setDescription(`_**${message.author.username}** sourit._`)
-                message.channel.send(blush_embed);
+                .setTitle('Nose bleed !')
+                .setURL(nosebleed_image)
+                .setImage(nosebleed_image)
+                .setDescription(`_**${message.author.username}** saigne du nez._`)
+                message.channel.send(nosebleed_embed);
             }
             else{         
-                var smile_embed = new Discord.RichEmbed()
+                var nosebleed_embed = new Discord.RichEmbed()
                 .setColor('RANDOM')
-                .setTitle('(✿^‿^)')
-                .setURL(smile_image)
-                .setImage(smile_image)
-                .setDescription(`_**${message.author.username}** sourit à **${member.displayName}**._`)
-                message.channel.send(smile_embed)
+                .setTitle('Nose bleed !')
+                .setURL(nosebleed_image)
+                .setImage(nosebleed_image)
+                .setDescription(`_**${message.author.username}** saigne du nez face à **${member.displayName}**._`)
+                message.channel.send(nosebleed_embed)
             }
-        };*/
+        };
 
 //Autres commandes :
 
