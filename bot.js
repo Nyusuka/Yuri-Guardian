@@ -217,7 +217,7 @@ bot.on("message", async message => {
     //Nose_bleed :
         if(command === "nosebleed"){
             var nosebleed_list = [
-                ""
+                "..."
                 ];
             var nosebleed_image = nosebleed_list[Math.floor(Math.random() * nosebleed_list.length)];
             let member = message.mentions.members.first();
@@ -277,6 +277,7 @@ bot.on("message", async message => {
                 .setAuthor(message.author.username + "#" + message.author.discriminator + " vient de proposer un nouveau GIF ! :")
                 .setThumbnail(message.author.avatarURL)
                 .setDescription(sayMessage)
+                .setImage(sayMessage)
                 .setColor('RANDOM')
                 .setTimestamp()
             bot.fetchUser("382500192907165717", false)
