@@ -71,11 +71,10 @@ bot.on("message", async message => {
                 "https://imgur.com/YdjuHIr.gif",
                 "https://imgur.com/ix4pgEJ.gif",
                 "https://imgur.com/MCAueOW.gif",
-                "https://media.tenor.com/images/7a6c91842f8b2871ecf5234bcd095da7/tenor.gif",
                 "https://media.tenor.com/images/8d33eeee359d0453de52c5779dd23c46/tenor.gif",
-                "https://images-ext-1.discordapp.net/external/ZxjcfVrvsko4WLdMZ-BzQgntB-W2PsXM3S6avmUKrIY/https/cdn.weeb.sh/images/r12R1kYPZ.gif",
-                "https://images-ext-2.discordapp.net/external/WTezF_lBdL2PKmcOFQVo7xocXD9pJLmGMJhDRvzjiug/https/cdn.weeb.sh/images/rkA6SU7w-.gif",
-                "https://images-ext-1.discordapp.net/external/j2lZhG1iY9jAPEab8SxR6FFo4V9uVghg92yJUZDCwiI/https/cdn.weeb.sh/images/BJkABImvb.gif?width=271&height=300"
+                "https://cdn.discordapp.com/attachments/725393277120938065/730848023176806490/rkA6SU7w-.gif",
+                //"https://images-ext-2.discordapp.net/external/WTezF_lBdL2PKmcOFQVo7xocXD9pJLmGMJhDRvzjiug/https/cdn.weeb.sh/images/rkA6SU7w-.gif",
+                //"https://images-ext-1.discordapp.net/external/j2lZhG1iY9jAPEab8SxR6FFo4V9uVghg92yJUZDCwiI/https/cdn.weeb.sh/images/BJkABImvb.gif?width=271&height=300"
             ];
             var cuddle_image = cuddle_list[Math.floor(Math.random() * cuddle_list.length)];
             var cuddle_embed = new Discord.RichEmbed()
@@ -155,7 +154,8 @@ bot.on("message", async message => {
             let member = message.mentions.members.first();
                 if(!member) return message.reply("Tu dois mentionner une personne à pat pat. =3");
             var pat_list = [
-                "https://tenor.com/view/anime-fox-cute-pat-head-gif-14083552"
+                "https://tenor.com/view/anime-fox-cute-pat-head-gif-14083552",
+                "https://cdn.discordapp.com/attachments/725393277120938065/730849432534253628/r12R1kYPZ.gif"
             ];
             var pat_image = pat_list[Math.floor(Math.random() * pat_list.length)];
             var pat_embed = new Discord.RichEmbed()
@@ -201,8 +201,8 @@ bot.on("message", async message => {
             let member = message.mentions.members.first();
                 if(!member) return message.reply("Tu dois mentionner une personne à qui tenir la main. =3");
             var handholding_list = [
-                "https://images.app.goo.gl/z1SMC4Ukxs85wta9A",
-                "https://images.app.goo.gl/DQMiVj25qN3wPyGJ9"
+                "",
+                ""
             ];
             var handholding_image = handholding_list[Math.floor(Math.random() * handholding_list.length)];
             var handholding_embed = new Discord.RichEmbed()
@@ -214,7 +214,7 @@ bot.on("message", async message => {
             message.channel.send(handholding_embed);
         };
 
-    //Nose_bleed :
+    //Nosebleed :
         if(command === "nosebleed"){
             var nosebleed_list = [
                 "..."
@@ -238,6 +238,33 @@ bot.on("message", async message => {
                 .setImage(nosebleed_image)
                 .setDescription(`_**${message.author.username}** saigne du nez face à **${member.displayName}**._`)
                 message.channel.send(nosebleed_embed)
+            }
+        };
+
+    //Nya (faire le pitit chat) :
+        if(command === "nya"){
+            var nya_list = [
+                "..."
+                ];
+            var nya_image = nya_list[Math.floor(Math.random() * nya_list.length)];
+            let member = message.mentions.members.first();
+            if(!member){
+                var nya_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('Nya !')
+                .setURL(nya_image)
+                .setImage(nya_image)
+                .setDescription(`_**${message.author.username}** fait le pitit chat._`)
+            message.channel.send(nya_embed);
+            }
+            else{         
+                var nya_embed = new Discord.RichEmbed()
+                .setColor('RANDOM')
+                .setTitle('Nya !')
+                .setURL(nya_image)
+                .setImage(nya_image)
+                .setDescription(`_**${message.author.username}** fait le pitit chat face à **${member.displayName}**._`)
+                message.channel.send(nya_embed)
             }
         };
 
