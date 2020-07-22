@@ -98,6 +98,7 @@ bot.on("message", async message => {
             var kiss_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTitle('Bisou-joue !')
+            .setURL(kiss_image)
             .setImage(kiss_image)
             .setDescription(`_**${message.author.username}** fait un bisou sur la joue de **${member.displayName}**._`)
             message.channel.send(kiss_embed);
@@ -110,7 +111,8 @@ bot.on("message", async message => {
                 "https://images-ext-2.discordapp.net/external/sDMoN120Tl0gsGgg4gLBAcFWtsIRMlkhKLfNHOmlsbw/https/cdn.weeb.sh/images/B1J4GIQP-.gif",
                 "https://media.tenor.com/images/818a1df69200edd887d3bfc99969d65c/tenor.gif",
                 "https://tenor.com/view/surprised-anime-anime-huh-wait-what-catalina-claes-gif-17082491",
-                "https://thumbs.gfycat.com/WickedMelodicAfricangroundhornbill-small.gif"
+                "https://thumbs.gfycat.com/WickedMelodicAfricangroundhornbill-small.gif",
+                "https://cdn.discordapp.com/attachments/725393277120938065/735545369106317322/B1J4GIQP-.gif"
             ];
             var blush_image = blush_list[Math.floor(Math.random() * blush_list.length)];
             let member = message.mentions.members.first();
@@ -137,7 +139,7 @@ bot.on("message", async message => {
             let member = message.mentions.members.first();
                 if(!member) return message.reply("Tu dois mentionner une personne à tripoter. =3");
             var poke_list = [
-                "..."
+                "https://media.discordapp.net/attachments/723220459302420542/732561527827333190/inconnu.gif?width=370&height=300"
             ];
             var poke_image = poke_list[Math.floor(Math.random() * poke_list.length)];
             var poke_embed = new Discord.RichEmbed()
@@ -201,8 +203,8 @@ bot.on("message", async message => {
             let member = message.mentions.members.first();
                 if(!member) return message.reply("Tu dois mentionner une personne à qui tenir la main. =3");
             var handholding_list = [
-                "",
-                ""
+                "https://cdn.discordapp.com/attachments/725393277120938065/730848063253381301/b2aaf7fa8977e3343bb7a9d04dd7b60662a9757ar1-500-280_hq.gif",
+                "https://cdn.discordapp.com/attachments/725393277120938065/730848070169919528/tumblr_pg4vm28jon1qimk8ao4_1280.gif"
             ];
             var handholding_image = handholding_list[Math.floor(Math.random() * handholding_list.length)];
             var handholding_embed = new Discord.RichEmbed()
